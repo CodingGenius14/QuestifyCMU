@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="container mt-4" style="max-width: 400px;">
+    <h1 class="mb-4">Login Page</h1>
+    <form method="POST" action="{{ url_for('login') }}">
+        {{ form.hidden_tag() }}
+        
+        <div class="mb-3">
+            {{ form.username.label(class="form-label") }}
+            {{ form.username(class="form-control", size=32) }}
+            {% for error in form.username.errors %}
+                <div class="text-danger small">[{{ error }}]</div>
+            {% endfor %}
+        </div>
+        
+        <div class="mb-3">
+            {{ form.password.label(class="form-label") }}
+            {{ form.password(class="form-control", size=32) }}
+            {% for error in form.password.errors %}
+                <div class="text-danger small">[{{ error }}]</div>
+            {% endfor %}
+        </div>
+        
+        <div class="mb-3">
+            {{ form.submit(class="btn btn-primary") }}
+        </div>
+    </form>
+
+    <a href="{{ url_for('register') }}">Don't have an account? Sign-Up</a>
+</div>
+{% endblock %}

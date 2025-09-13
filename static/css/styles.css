@@ -1,0 +1,27 @@
+body {
+    background-color: #f8f9fa; /* light gray background */
+    color: #333; /* dark text color */
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #a41034; /* CMU Tartan red */
+}
+
+a {
+    color: #004f71; /* CMU blue */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #a41034;
+    text-decoration: underline;
+}
+
+
+
+.image-wrapper img {
+  max-width: 100%;  /* image won’t be wider than its container */
+  height: auto;     /* keeps aspect ratio */
+  display: block;
+}
